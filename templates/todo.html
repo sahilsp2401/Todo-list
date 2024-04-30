@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}
+  Todo
+{% endblock title %}
+{% block body %}
+<div class="container my-3">
+  <h2>Add a Todo</h2>
+  <form action="/todo" method="POST">
+    <input type="hidden" id="user" name="user" value="{{user.id}}">
+    <div class="mb-3">
+      <label for="title" class="form-label">Todo Title</label>
+      <input type="text" class="form-control" id="title" name="title" aria-describedby="emailHelp" required>
+    </div>
+    <div class="mb-3">
+      <label for="desc" class="form-label">Todo Description</label>
+      <input type="text" class="form-control" id="desc" name="desc" required>
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+    <a href="/viewtodo/{{user.id}}" class="btn btn-primary">View</a>
+    <a href="/login" class="btn btn-danger">Logout</a>
+  </form>
+</div>
+
+</div>
+{% endblock body %}

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title %}
+  View-Todo
+{% endblock title %}
+{% block body %}
+
+<div class="container my-3">
+    <h2>Your Todos</h2>
+    {% if allTodo|length ==0 %}
+    <div class="alert alert-danger" role="alert">
+      No Todo Found. Add your first todo now.
+    </div>
+    {% else %}
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">sNo</th>
+          <th scope="col">Title</th>
+          <th scope="col">Description</th>
+          <th scope="col">Time</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for todo in allTodo %}
+        <tr>
+          <th scope="row">{{loop.index}}</th>
+          <td>{{todo.title}}</td>
+          <td>{{todo.desc}}</td>
+          <td>{{todo.date_created}}</td>
+          <td>
+            <a href="/update/{{todo.sno}}/{{ todo.id }}" class="btn btn-outline-success btn-sm">Update</button>
+            <a href="/delete/{{todo.sno}}/{{ todo.id }}" class="btn btn-outline-dark btn-sm mx-1">Delete</button>
+          </td>
+        </tr>
+        {% endfor %}
+        {% endif %}
+  
+      </tbody>
+    </table>
+    <a href="/login" class="btn btn-danger">Logout</a>
+    
+    {% endblock body %}
