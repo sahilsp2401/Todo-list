@@ -4,7 +4,7 @@ Title: Todo-List
 Author - Sahil Sapkal
 
 Description:
-The Flask TodoList Repo hosts a user-friendly task management web app. Features include add,update and delete tasks.
+The Flask TodoList Repo hosts a user-friendly task management web app. Features include user authentication add,update and delete tasks.
 
 Contributions:
 Contributions to this project are welcome! Whether it's bug fixes, feature enhancements, or documentation improvements, feel free to fork the repository, make your changes, and submit a pull request.
